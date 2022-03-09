@@ -1,10 +1,36 @@
-<?php
 
-$origian_array=array(1,5,2,5,1,3,2,4,5);
-echo "origin array :<br>";
-print_r($origian_array) ;
-$update=array_unique($origian_array);
-echo "<br> updating array :<br>";
-print_r ($update);
-echo "<br>";
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subject</title>
+</head>
+<body>
+
+<h1>
+    Select Subjects
+</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <select name="subjects[]" id="subjects" multiple>
+        <option  value="english">ENGLISH</option>
+        <option  value="math">MATH</option>
+        <option  value="computer">COMPUTER</option>
+        <option  value="physiscs">PHYSICS</option>
+        <option  value="chemisty">CHEMISTRY</option>
+        </select>
+        <input type="submit" value="submit"  name="submit">
+    </form>
+
+    <?php
+
+if (isset($_POST["subjects"])){
+        
+        foreach($_POST["subjects"] as $subject){
+            echo "You selected $subject" . "<br>";
+        }
+    }
+    ?>
+</body>
+</html>
