@@ -1,15 +1,10 @@
 <?php
 
-//Start $GLOBALS example
-echo '<br> <br> <br> <h1 style="color:blue;" >$GLOBALS</h1>';
-function test()
-{
-    $foo = "local variable";
-    echo '$foo in global scope: ' . $GLOBALS["foo"] . "<br>";
-    echo '$foo in current scope: ' . $foo . "<br>";
-}
-
-$foo = "Example content";
-test();
-
+$origian_array=array(1,5,2,5,1,3,2,4,5);
+echo "origin array :<br>";
+print_r($origian_array) ;
+$update=array_unique($origian_array);
+echo "<br> updating array :<br>";
+print_r ($update);
+echo "<br>";
 ?>
